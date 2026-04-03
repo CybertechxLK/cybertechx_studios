@@ -177,36 +177,67 @@ nav a:hover::after {
   margin-bottom: 0;
 }
 
-/* ලෝගෝ එක සහ විස්තරය දෙපැත්තට ගන්න */
-.card-content {
+.main-company-section {
+    padding: 60px 20px;
     display: flex;
-    align-items: center;
-    gap: 20px; /* ලෝගෝ එකයි අකුරුයි අතර පරතරය */
+    justify-content: center; /* හරහට මැදට ගැනීමට */
+    align-items: center;     /* සිරස්ව මැදට ගැනීමට */
+    background-color: #000;
+    width: 100%;
 }
 
-/* ලෝගෝ එක තියෙන කොටස */
-.company-logo-container {
-    flex-shrink: 0; /* ලෝගෝ එක කුඩා වීම වැළැක්වීමට */
+.company-card {
+    background: linear-gradient(145deg, #0d1117, #161b22);
+    border: 1px solid #30363d;
+    border-top: 4px solid #00d2ff; /* උඩින් නිල් පාට ඉරක් දැම්මා ලස්සනට පේන්න */
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px; /* බොක්ස් එකේ පළල */
+    width: 90%;
+    text-align: center; /* අකුරු මැදට කිරීමට */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column; /* ලෝගෝ එකයි අකුරුයි එක යට එක එන්න */
+    align-items: center;    /* ඔක්කොම මැදට Align කරන්න */
+    gap: 25px;
 }
 
 .company-logo {
-    width: 70px; /* ඔයාට අවශ්‍ය ප්‍රමාණයට වෙනස් කරන්න */
+    width: 150px; /* ලෝගෝ එක ලොකු කළා (ඔයාට ඕන ප්‍රමාණයකට මෙතනින් වෙනස් කරන්න) */
     height: auto;
-    border-radius: 8px; /* ලෝගෝ එකට ලස්සනට රවුම් දාරයක් දීමට */
-    filter: drop-shadow(0 0 5px rgba(0, 210, 255, 0.5)); /* ලෝගෝ එක වටා නිල් ආලෝකයක් */
+    border-radius: 15px;
+    filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));
+    margin-bottom: 10px;
 }
 
+.card-label {
+    color: #00d2ff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
 
-@media (max-width: 480px) {
-    .card-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .company-card {
-        text-align: center;
-        border-left: none;
-        border-bottom: 4px solid #00d2ff;
-    }
+.company-name {
+    color: #ffffff;
+    font-size: 2.5rem; /* නම ලොකු කළා */
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+.company-description {
+    color: #8b949e;
+    max-width: 500px; /* විස්තරය ගොඩක් පළල් වෙන්නේ නැතිවෙන්න */
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.company-card:hover {
+    border-color: #00d2ff;
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
 }
 
 .portfolio-showcase {
@@ -530,19 +561,16 @@ footer {
 <section class="main-company-section">
     <div class="company-card">
         <div class="card-content">
-            <div class="company-logo-container">
-                <img src="Logo.png" alt="Company Logo" class="company-logo">
-            </div>
+            <img src="logo.png" alt="Company Logo" class="company-logo">
             
             <div class="company-info">
                 <h3 class="card-label">Main Brand</h3>
                 <h2 class="company-name">Cybertechx Group</h2>
                 <p class="company-description">
-                    Innovating the digital landscape with cutting-edge technology.
+                    Innovating the digital landscape with cutting-edge technology and premium creative solutions.
                 </p>
             </div>
         </div>
-        <div class="glow-line"></div>
     </div>
 </section>
 
