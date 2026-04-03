@@ -223,34 +223,44 @@ nav a:hover::after {
   transform: translateY(0);
 }
 
+..main-company-section {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column; /* මාතෘකාව සහ box එක එක යට එක එන්න */
+    align-items: center;    /* ඔක්කොම මැදට (Center) කරන්න */
+    background-color: #000;
+    width: 100%;
+}
+
+/* Box එකට උඩින් එන අකුරු වල style එක */
+.section-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 4px; /* අකුරු අතර පරතරය වැඩි කළා premium look එකක් දෙන්න */
+    margin-bottom: 30px; /* Box එක සහ අකුරු අතර පරතරය */
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.8); /* අකුරු වලට නිල් පාට glow එකක් */
+}
+
 .company-card {
-    /* පසුබිම ඔයාගේ image එකේ වගේම තද අළු/කළු පැහැයක් */
     background-color: #1a1a1a; 
-    
-    /* වටේට තියෙන නිල් පාට Glowing Border එක */
     border: 2px solid #007bff; 
     border-radius: 20px;
     padding: 40px;
     max-width: 800px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4); /* නිල් පාටට බැබළෙන ගතිය (Glow) */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
     transition: 0.3s;
 }
 
-/* Mouse එක උඩට ගෙනියද්දී Glow එක වැඩි වෙන්න */
-.company-card:hover {
-    box-shadow: 0 0 35px rgba(0, 123, 255, 0.7);
-    border-color: #3399ff;
-}
-
-/* Image එකේ තියෙන icon එකේ නිල් පාටම අකුරු වලටත් පාවිච්චි කරමු */
-.card-label {
-    color: #007bff;
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+/* ඉතිරි CSS කලින් දුන්න විදියටම තියාගන්න */
+.company-logo {
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));
+    margin-bottom: 20px;
 }
 
 .company-name {
@@ -260,18 +270,10 @@ nav a:hover::after {
 }
 
 .company-description {
-    color: #b0b0b0; /* ටිකක් ලා අළු පාටක් */
+    color: #b0b0b0;
     line-height: 1.8;
     font-size: 1.1rem;
-    font-style: italic; /* පින්තූරයේ පහළ අකුරු වගේම ඉටැලික් කළා */
-}
-
-/* ලෝගෝ එකටත් පොඩි glow එකක් */
-.company-logo {
-    width: 150px;
-    height: auto;
-    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));
-    margin-bottom: 20px;
+    font-style: italic;
 }
 
 .btn {
@@ -630,7 +632,9 @@ footer {
     </a>
   </section>
   
-  <section class="main-company-section">
+ <section class="main-company-section">
+    <h2 class="section-title">OUR MAIN COMPANY</h2>
+    
     <div class="company-card">
         <div class="card-content">
             <img src="Logo.png" alt="Company Logo" class="company-logo">
