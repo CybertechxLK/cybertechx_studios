@@ -223,57 +223,118 @@ nav a:hover::after {
   transform: translateY(0);
 }
 
+/* --- Main Section Container --- */
 .main-company-section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     display: flex;
-    flex-direction: column; /* මාතෘකාව සහ box එක එක යට එක එන්න */
-    align-items: center;    /* ඔක්කොම මැදට (Center) කරන්න */
-    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000; /* පසුබිම තද කළු පැහැය */
     width: 100%;
+    font-family: 'Poppins', sans-serif; /* ඔයා පාවිච්චි කරන font එකට වෙනස් කරගන්න */
 }
 
-/* Box එකට උඩින් එන අකුරු වල style එක */
+/* --- Section Title (Box එකට උඩින් ඇති අකුරු) --- */
 .section-title {
     color: #ffffff;
     font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: 4px; /* අකුරු අතර පරතරය වැඩි කළා premium look එකක් දෙන්න */
-    margin-bottom: 30px; /* Box එක සහ අකුරු අතර පරතරය */
+    letter-spacing: 5px;
+    margin-bottom: 40px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(1, 6, 12, 0.8); /* අකුරු වලට නිල් පාට glow එකක් */
+    text-align: center;
+    opacity: 0.9;
 }
 
+/* --- The Main Company Card (Normal State) --- */
 .company-card {
-    background-color: #1a1a1a; 
-    border: 2px solid #007bff; 
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 800px;
+    background-color: #1a1a1a; /* ඔයාගේ package card එකේ වගේම අඳුරු පැහැයක් */
+    border: 2px solid #333;    /* මුලින් border එක අඳුරුයි */
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-width: 850px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
-    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+    
+    /* Smooth Animation එක සඳහා */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    
+    box-shadow: none; /* මුලින් glow එකක් නැත */
 }
 
-/* ඉතිරි CSS කලින් දුන්න විදියටම තියාගන්න */
+/* --- Mouse Hover Effect (මවුස් එක තිබ්බම සිදුවන වෙනස) --- */
+.company-card:hover {
+    transform: translateY(-20px); /* බොක්ස් එක ලස්සනට උඩට ඉස්සෙනවා */
+    border-color: #007bff;        /* Border එක නිල් පාට වෙනවා */
+    background-color: #1c1c1c;
+    
+    /* නිල් පාටින් Glow වෙන shadow එක */
+    box-shadow: 0 20px 50px rgba(0, 123, 255, 0.5); 
+}
+
+/* --- Content Wrapper --- */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* --- Logo Styling --- */
 .company-logo {
-    width: 150px;
+    width: 160px; /* ලෝගෝ එකේ ප්‍රමාණය */
     height: auto;
-    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));
-    margin-bottom: 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    filter: grayscale(40%); /* මුලින් ලෝගෝ එක පොඩ්ඩක් අඳුරුයි */
+}
+
+.company-card:hover .company-logo {
+    filter: grayscale(0%) drop-shadow(0 0 20px rgba(0, 123, 255, 0.8));
+    transform: scale(1.05); /* ලෝගෝ එකත් පොඩ්ඩක් ලොකු වෙනවා */
+}
+
+/* --- Text Information --- */
+.card-label {
+    color: #007bff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .company-name {
     color: #ffffff;
-    font-size: 2.5rem;
-    margin: 10px 0;
+    font-size: 2.8rem;
+    margin: 0;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .company-description {
-    color: #b0b0b0;
+    color: #a0a0a0;
+    max-width: 600px;
     line-height: 1.8;
     font-size: 1.1rem;
     font-style: italic;
+    margin-top: 15px;
+}
+
+/* --- Responsive for Mobile --- */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 2rem;
+    }
+    .company-card {
+        padding: 30px 20px;
+    }
+    .company-logo {
+        width: 120px;
+    }
 }
 
 .btn {
