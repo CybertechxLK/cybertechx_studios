@@ -177,6 +177,38 @@ nav a:hover::after {
   margin-bottom: 0;
 }
 
+/* ලෝගෝ එක සහ විස්තරය දෙපැත්තට ගන්න */
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ලෝගෝ එකයි අකුරුයි අතර පරතරය */
+}
+
+/* ලෝගෝ එක තියෙන කොටස */
+.company-logo-container {
+    flex-shrink: 0; /* ලෝගෝ එක කුඩා වීම වැළැක්වීමට */
+}
+
+.company-logo {
+    width: 70px; /* ඔයාට අවශ්‍ය ප්‍රමාණයට වෙනස් කරන්න */
+    height: auto;
+    border-radius: 8px; /* ලෝගෝ එකට ලස්සනට රවුම් දාරයක් දීමට */
+    filter: drop-shadow(0 0 5px rgba(0, 210, 255, 0.5)); /* ලෝගෝ එක වටා නිල් ආලෝකයක් */
+}
+
+
+@media (max-width: 480px) {
+    .card-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .company-card {
+        text-align: center;
+        border-left: none;
+        border-bottom: 4px solid #00d2ff;
+    }
+}
+
 .portfolio-showcase {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -494,6 +526,25 @@ footer {
       </div>
     </div>
   </section>
+
+<section class="main-company-section">
+    <div class="company-card">
+        <div class="card-content">
+            <div class="company-logo-container">
+                <img src="Logo.png" alt="Company Logo" class="company-logo">
+            </div>
+            
+            <div class="company-info">
+                <h3 class="card-label">Main Brand</h3>
+                <h2 class="company-name">Cybertechx Group</h2>
+                <p class="company-description">
+                    Innovating the digital landscape with cutting-edge technology.
+                </p>
+            </div>
+        </div>
+        <div class="glow-line"></div>
+    </div>
+</section>
 
   <section class="section" id="packages">
   <h2>Our Packages </h2>
